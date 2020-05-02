@@ -1,11 +1,27 @@
 import React from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Home from "./components/home/Home";
+import Pricing from "./components/pricing/Pricing";
+import Features from "./components/features/Features";
 
-const Home = () => {
+const Body = () => {
   return (
     <div>
-      <h1>Home</h1>
+      <Router>
+        <Switch>
+          <Route path="/home">
+            <Home />
+          </Route>
+          <Route path="/pricing">
+            <Pricing />
+          </Route>
+          <Route path="/feature">
+            <Features />
+          </Route>
+        </Switch>
+      </Router>
     </div>
   );
 };
 
-export default Home;
+export default Body;
